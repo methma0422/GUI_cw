@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="RuchiToursRemake.GuestDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RuchiToursRemake"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="950">
+    <Grid Style="{StaticResource uCtrlGrid}" >
+        <Label Style="{StaticResource MainTitles}" Content="Guest Details" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Margin="0,17,0,0"/>
+        <Label Style="{StaticResource userCtrlLbls}" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="592,94,0,0"/>
+        <TextBox x:Name="TxtSearch" Style="{StaticResource userCtrlTxtBox}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="685,94,0,0" Width="186" TextChanged="TxtSearch_TextChanged"/>
+        <DataGrid x:Name="DataGridGuestDetails" ColumnHeaderStyle="{StaticResource TableGridHeader}" AutoGenerateColumns="False" Width="855" HorizontalAlignment="Center" Margin="0,134,0,134" HeadersVisibility="Column" RowHeight="30" d:ItemsSource="{Binding GuestList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding guestId}" Visibility="Collapsed"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding fullName}" Width="100"/>
+                <DataGridTextColumn Header="Contact NO" Binding="{Binding contactNO}" Width="100"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding email}" Width="150"/>
+                <DataGridTextColumn Header="Country" Binding="{Binding country}" Width="100"/>
+                <DataGridTextColumn Header="Passport NO" Binding="{Binding passportNO}" Width="123"/>
+
+                <DataGridTemplateColumn Header="Edit" Width="140">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit" Click="EditButton_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Delete" Width="140">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete" Click="DeleteButton_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="BtnAdd" Style="{StaticResource userCtrlBtn}" Content="Add" Margin="810,725,0,0" Width="75" Click="BtnAdd_Click"/>
+    </Grid>
+</UserControl>

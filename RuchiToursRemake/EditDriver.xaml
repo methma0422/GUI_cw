@@ -1,0 +1,29 @@
+﻿<Window x:Class="RuchiToursRemake.EditDriver"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RuchiToursRemake"
+        mc:Ignorable="d"
+        Title="EditDriver" Height="800" Width="950">
+    <Grid Style="{StaticResource uCtrlGrid}">
+        <Rectangle Style="{StaticResource EditPageRectangle}">
+            <Rectangle.Effect>
+                <BlurEffect/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <Label Style="{StaticResource MainTitles}" Content="Edit Driver Details" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,117,0,0"/>
+        <Label x:Name="LblImage" Style="{StaticResource LblImage}">
+            <Image x:Name="imgDriver" Height="100" Width="100"/>
+        </Label>
+        <Label Style="{StaticResource userCtrlLbls}" Content="Name" Margin="230,408,0,0"/>
+        <Label Style="{StaticResource userCtrlLbls}" Content="Contact No" Margin="230,472,0,0"/>
+        <Label Style="{StaticResource userCtrlLbls}" Content="Address" Margin="230,530,0,0"/>
+        <TextBox x:Name="TxtName" Style="{StaticResource userCtrlTxtBox}" Margin="400,408,0,0" Width="280"/>
+        <TextBox x:Name="TxtContactNo" Style="{StaticResource userCtrlTxtBox}" Margin="400,472,0,0" Width="280"/>
+        <TextBox x:Name="TxtAddress" Style="{StaticResource userCtrlTxtBox}" Margin="400,530,0,0" Width="280"/>
+        <Button x:Name="BtnAddPhoto" Style="{StaticResource userCtrlBtn}" Content="Add Photo" Width="150" Margin="0,354,0,0" HorizontalAlignment="Center" Click="BtnAddPhoto_Click"/>
+        <Button x:Name="BtnSave" Style="{StaticResource userCtrlBtn}" Content="Save" Width="76" Margin="600,616,0,0" Click="BtnSave_Click"/>
+    </Grid>
+</Window>

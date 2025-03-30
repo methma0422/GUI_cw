@@ -1,0 +1,21 @@
+﻿<Window x:Class="RuchiToursRemake.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RuchiToursRemake"
+        mc:Ignorable="d"
+        Title="Register" Height="600" Width="450" WindowStartupLocation="CenterScreen">
+    <Grid Width="450" Height="600" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.Background>
+            <ImageBrush ImageSource="/SignUP001.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Rectangle Style="{StaticResource Rectangles}" Margin="0,50,0,50" VerticalAlignment="Stretch"/>
+        <Label Style="{StaticResource MainTitles}" Content="Register" Margin="150,80,150,470" Width="150" Height="50"/>
+        <Label Style="{StaticResource LoginPageLables}" Content="Username" HorizontalAlignment="Left" Margin="75,180,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtUsername" Style="{StaticResource LoginPageTxtB}" HorizontalAlignment="Center" Margin="0,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" TextChanged="TxtUsername_TextChanged"/>
+        <TextBox x:Name="TxtPassword" Style="{StaticResource LoginPageTxtB}" HorizontalAlignment="Center" Margin="0,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
+        <Label Style="{StaticResource LoginPageLables}" Content="Password" HorizontalAlignment="Left" Margin="75,279,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="BtnRegister" Style="{StaticResource LoginPageBtn}"  Content="Register" HorizontalAlignment="Center" Margin="0,419,0,0" VerticalAlignment="Top" Background="#FF74C2C2" BorderBrush="#FF2D7B7B" Click="BtnRegister_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="RuchiToursRemake.ViewTours"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RuchiToursRemake"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="950">
+    <Grid Style="{StaticResource uCtrlGrid}">
+        <Label Style="{StaticResource MainTitles}" Content="View Tours" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Margin="0,17,0,0"/>
+        <Label Style="{StaticResource userCtrlLbls}" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="592,94,0,0"/>
+        <TextBox x:Name="TxtSearch" Style="{StaticResource userCtrlTxtBox}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="685,94,0,0" Width="186" TextChanged="TxtSearch_TextChanged"/>
+        <DataGrid x:Name="DataGridViewTours" ColumnHeaderStyle="{StaticResource TableGridHeader}" AutoGenerateColumns="False" Width="855" HorizontalAlignment="Center" Margin="0,134,0,134" HeadersVisibility="Column" RowHeight="30" d:ItemsSource="{Binding TourList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding tourId}" Visibility="Collapsed"/>
+                <DataGridTextColumn Header="Guest Name" Binding="{Binding guestName}" Width="100"/>
+                <DataGridTextColumn Header="Driver" Binding="{Binding driverName}" Width="150"/>
+                <DataGridTextColumn Header="Guide" Binding="{Binding guideName}" Width="100"/>
+                <DataGridTextColumn Header="Vehicle" Binding="{Binding vehicleType}" Width="123"/>
+                <DataGridTextColumn Header="Currency" Binding="{Binding currency}" Width="100"/>
+                <DataGridTextColumn Header="No Of Tour Members" Binding="{Binding Number_of_Members}" Width="100"/>
+                <DataGridTextColumn Header="Starting Date" Binding="{Binding startingDate}" Width="100"/>
+                <DataGridTextColumn Header="Ending Date" Binding="{Binding endingDate}" Width="100"/>
+                <DataGridTextColumn Header="Tour Status" Binding="{Binding tourStatus}" Width="100"/>
+                <DataGridTextColumn Header="Total Tour Charge" Binding="{Binding totalTourCharge}" Width="100"/>
+                <DataGridTextColumn Header="Locatiion" Binding="{Binding Location_Names}" Width="100"/>
+                <DataGridTextColumn Header="Accommodation" Binding="{Binding Hotel_Names}" Width="100"/>
+                <DataGridTextColumn Header="First Date" Binding="{Binding FirstDate}" Visibility="Collapsed"/>
+                <DataGridTextColumn Header="Last Date" Binding="{Binding LastDate}" Visibility="Collapsed"/>
+
+
+
+                <DataGridTemplateColumn Header="Delete" Width="140">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete" Click="DeleteButton_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
