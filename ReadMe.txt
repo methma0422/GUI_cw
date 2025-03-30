@@ -1,0 +1,1 @@
+Import the mysql db (RTAppDBDump.sql) to mysql server and setup the DB Username and Password accordingly.
